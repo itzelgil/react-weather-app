@@ -1,3 +1,50 @@
 .Weather {
+  font-family: "Poppins", sans-serif;
+  color: white;
   border: 1px solid #dadde1;
+  padding: 16px;
+  background: rgba(14, 139, 242, 0.504);
+  background: linear-gradient(
+    0deg,
+    rgba(14, 139, 242, 0.5074404761904762) 18%,
+    rgba(251, 188, 44, 0.6783088235294117) 100%
+  );
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.Weather form {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.Weather .form-control {
+  margin-right: 10px;
+}
+.Weather .btn {
+  background-color: rgba(132, 212, 236, 0.582);
+  border-radius: 5px;
+  border-color: #d5cd9e;
+  color: white;
+}
+
+.Weather h1 {
+  text-transform: capitalize;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 29px;
+}
+.Weather .icon {
+  font-size: 130px;
+}
+
+.Weather .currentTemp {
+  font-size: 80px;
+}
+
+.Weather .degrees {
+  position: relative;
+  font-size: 18px;
+  top: -45px;
 }

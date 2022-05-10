@@ -2,20 +2,24 @@ import React from "react";
 
 export default function ShowIcon(props) {
   const iconMapping = {
-    Clear: "☀️",
-    Snow: "🌨",
-    Clouds: "⛅️",
-    Thunderstorm: "⛈",
-    Rain: "🌧",
-    Mist: "🌫",
-    Fog: "🌫",
-    Smoke: "🌫",
-    Haze: "🌫",
-    Dust: "🌫",
-    Sand: "🌫",
-    Ssh: "🌫",
-    Squal: "🌫",
-    Tornado: "🌪",
+    "01d": "☀️",
+    "01n": "🌙",
+    "02d": "⛅️",
+    "02n": "☁️",
+    "03d": "☁️",
+    "03n": "☁️",
+    "04d": "☁️",
+    "04n": "☁️",
+    "09d": "🌧",
+    "09n": "🌧",
+    "10d": "🌧",
+    "10n": "🌧",
+    "11d": "⛈",
+    "11n": "⛈",
+    "13d": "🌨",
+    "13n": "🌨",
+    "50d": "🌫",
+    "50n": "🌫",
   };
 
   return iconMapping[props.icon];

@@ -15,7 +15,7 @@
 }
 
 .Weather form {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: inline-block;
 }
 .Weather .form-control {
@@ -31,7 +31,7 @@
 .Weather .cityName {
   text-transform: uppercase;
   color: #ffffff;
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 100;
   line-height: 29px;
 }
@@ -44,7 +44,7 @@
 }
 
 .Weather .currentTemp {
-  font-size: 80px;
+  font-size: 92px;
 }
 
 .Weather .degrees {

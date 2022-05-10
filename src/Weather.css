@@ -28,12 +28,16 @@
   color: white;
 }
 
-.Weather h1 {
-  text-transform: capitalize;
+.Weather .cityName {
+  text-transform: uppercase;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 100;
   line-height: 29px;
+}
+
+.Weather .description {
+  text-transform: capitalize;
 }
 .Weather .icon {
   font-size: 130px;

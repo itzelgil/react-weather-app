@@ -20,6 +20,7 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
       high: Math.round(response.data.main.temp_max),
       low: Math.round(response.data.main.temp_min),
+      icon: response.data.weather[0].main,
     });
   }
 

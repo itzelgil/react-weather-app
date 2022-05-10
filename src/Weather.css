@@ -50,5 +50,6 @@
 .Weather .degrees {
   position: relative;
   font-size: 18px;
-  top: -45px;
+  top: -52px;
+  margin-left: 2px;
 }

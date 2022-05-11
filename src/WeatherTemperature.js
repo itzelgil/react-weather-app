@@ -38,6 +38,7 @@ export default function WeatherTemperature(props) {
             ºF
           </a>
         </span>
+        <br />
 
         <h5>Feels like {props.feel}ºC</h5>
         <p>

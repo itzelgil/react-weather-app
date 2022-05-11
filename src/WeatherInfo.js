@@ -20,6 +20,7 @@ export default function WeatherInfo(props) {
           <h3 className="description">{props.data.description}</h3>
         </div>
         <div className="col-6">
+          <br />
           <WeatherTemperature
             celsius={props.data.temperature}
             feel={props.data.feel}

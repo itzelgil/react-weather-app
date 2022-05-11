@@ -19,7 +19,7 @@ export default function WeatherInfo(props) {
           </h2>
           <h3 className="description">{props.data.description}</h3>
         </div>
-        <div className="col-6">
+        <div className="col-6 showTemp">
           <br />
           <WeatherTemperature
             celsius={props.data.temperature}
@@ -31,7 +31,7 @@ export default function WeatherInfo(props) {
       </div>
       <br />
       <div className="row">
-        <div className="col-12">
+        <div className="col-12 infoWeather">
           <p>Humidity: {props.data.humidity}%</p>
           <p>Wind speed: {props.data.wind} km/h</p>
         </div>

@@ -21,7 +21,7 @@
   .infoWeather,
   .showTemp,
   .icon {
-    font-size: 14px !important;
+    font-size: 18px !important;
     line-height: 80%;
     margin-top: 10px;
   }
@@ -67,6 +67,6 @@
 .Weather .degrees {
   position: relative;
   font-size: 14px;
-  top: -52px;
+  top: -40px;
   margin-left: 2px;
 }

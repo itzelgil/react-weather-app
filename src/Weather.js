@@ -43,7 +43,7 @@ export default function Weather(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="Weather">
+      <div className="justify-content-evenly Weather">
         <div className="row">
           <form className="d-flex" onSubmit={handleSubmit}>
             <div className="col-9">

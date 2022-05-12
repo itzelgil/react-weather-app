@@ -51,10 +51,12 @@ export default function WeatherTemperature(props) {
       <div className="WeatherTemperature">
         <span className="currentTemp">
           {Math.round(fahrenheit())}
-          <a href="/" onClick={showCelsius}>
-            ºC{" "}
-          </a>{" "}
-          | ºF
+          <span className="celsius">
+            <a href="/" onClick={showCelsius} className="degrees">
+              ºC{" "}
+            </a>{" "}
+            | ºF
+          </span>
         </span>
 
         <h5 className="feelsLike">

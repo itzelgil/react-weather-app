@@ -11,7 +11,7 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
+    // console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -48,13 +48,14 @@ export default function Weather(props) {
 
   function getCoords(event) {
     event.preventDefault();
-    navigator.geolocation.getCurrentPosition(handlePosition);
+
+    return navigator.geolocation.getCurrentPosition(findLocation);
   }
 
-  function handlePosition(position) {
+  function findLocation(position) {
     let apiKey = `a58132974e1508fb139cd5dab2b170ec`;
-    let longitude = position.coordinates.lon;
-    let latitude = position.coordinates.lat;
+    let longitude = position.coords.longitude;
+    let latitude = position.coords.latitude;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }

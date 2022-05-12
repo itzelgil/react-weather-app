@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -9,12 +11,12 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    // console.log(response.data);
+    console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
       city: response.data.name,
-      date: new Date(response.data.dt * 1000),
+      date: formatDate(response.data.timezone),
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       feel: Math.round(response.data.main.feels_like),
@@ -36,19 +38,26 @@ export default function Weather(props) {
     event.preventDefault();
     search();
   }
+  function formatDate(timezone) {
+    let d = new Date();
+    let localTime = d.getTime();
+    let localOffset = d.getTimezoneOffset() * 60000;
+    let utc = localTime + localOffset;
+    return new Date(utc + 1000 * timezone);
+  }
 
-  // function getCoords(event) {
-  //   event.preventDefault();
-  //   navigator.geolocation.getCurrentPosition(handlePosition);
-  // }
+  function getCoords(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(handlePosition);
+  }
 
-  // function handlePosition(position) {
-  //   let apiKey = `a58132974e1508fb139cd5dab2b170ec`;
-  //   let longitude = position.coordinates.lon;
-  //   let latitude = position.coordinates.lat;
-  //   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-  //   axios.get(apiUrl).then(handleResponse);
-  // }
+  function handlePosition(position) {
+    let apiKey = `a58132974e1508fb139cd5dab2b170ec`;
+    let longitude = position.coordinates.lon;
+    let latitude = position.coordinates.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
 
   function handleCityChange(event) {
     setCity(event.target.value);
@@ -70,9 +79,12 @@ export default function Weather(props) {
             </div>
             <div className="col-3">
               <input type="submit" value="Search" className="btn btn-primary" />
-              {/* <button className="button location-btn" onClick={getCoords}>
-                📍
-              </button> */}
+              <button
+                className="button location-btn gpsIconButton"
+                onClick={getCoords}
+              >
+                <FontAwesomeIcon icon={faLocationDot} className="gpsIcon" />
+              </button>
             </div>
           </form>
         </div>

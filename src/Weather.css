@@ -57,7 +57,8 @@
   text-transform: capitalize;
 }
 .Weather .icon {
-  font-size: 130px;
+  margin-top: 20px;
+  font-size: 100px;
 }
 
 .Weather .currentTemp {
@@ -69,4 +70,14 @@
   font-size: 14px;
   top: -40px;
   margin-left: 2px;
+}
+
+.Weather .gpsIconButton,
+.gpsIcon {
+  font-size: 19px;
+  border-radius: 10px;
+  margin-left: 3px;
+  background-color: rgba(177, 225, 240, 0.582);
+  border-color: rgba(132, 212, 236, 0);
+  color: white;
 }

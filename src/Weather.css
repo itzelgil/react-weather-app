@@ -14,20 +14,38 @@
   border-radius: 10px;
 }
 
-@media screen and (max-width: 360px) {
-  .cityName,
+/* @media screen and (max-width: 360) {
   .currentTemp,
+  .icon {
+    font-size: 38px !important;
+    line-height: 80%;
+    margin-top: 10px;
+  }
+} */
+
+@media screen and (max-width: 350px) {
   .description,
   .infoWeather,
-  .showTemp,
-  .icon {
-    font-size: 18px !important;
-    line-height: 80%;
+  .high-low {
+    font-size: 18px;
+  }
+  .feelsLike {
+    font-size: 12px !important;
+  }
+
+  .degrees {
+    font-size: 9px;
     margin-top: 10px;
   }
   .icon {
     width: 100%;
     max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .degrees {
+    display: none;
   }
 }
 
@@ -65,7 +83,7 @@
   font-size: 72px;
 }
 
-.Weather .degrees {
+.Weather .celsius {
   position: relative;
   font-size: 14px;
   top: -40px;

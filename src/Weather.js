@@ -53,10 +53,11 @@ export default function Weather(props) {
   }
 
   function findLocation(position) {
+    console.log(findLocation);
     let apiKey = `a58132974e1508fb139cd5dab2b170ec`;
-    let longitude = position.coords.longitude;
-    let latitude = position.coords.latitude;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    let lon = position.coords.longitude;
+    let lat = position.coords.latitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
 

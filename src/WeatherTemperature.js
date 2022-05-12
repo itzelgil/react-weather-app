@@ -32,9 +32,9 @@ export default function WeatherTemperature(props) {
     return (
       <div className="WeatherTemperature">
         <span className="currentTemp">{props.celsius}</span>
-        <span className="degrees">
-          ºC |{" "}
-          <a href="/" onClick={showFahrenheit}>
+        <span className="celsius">
+          ºC {""}
+          <a href="/" onClick={showFahrenheit} className="degrees">
             ºF
           </a>
         </span>
@@ -49,16 +49,18 @@ export default function WeatherTemperature(props) {
   } else {
     return (
       <div className="WeatherTemperature">
-        <span className="currentTemp">{Math.round(fahrenheit())}</span>
-        <span className="degrees">
+        <span className="currentTemp">
+          {Math.round(fahrenheit())}
           <a href="/" onClick={showCelsius}>
             ºC{" "}
           </a>{" "}
           | ºF
         </span>
 
-        <h5>Feels like {Math.round(fahrenheitFeel())}ºC</h5>
-        <p>
+        <h5 className="feelsLike">
+          Feels like {Math.round(fahrenheitFeel())}ºC
+        </h5>
+        <p className="high-low">
           H: {Math.round(fahrenheitHigh())}º L: {Math.round(fahrenheitLow())}º
         </p>
       </div>

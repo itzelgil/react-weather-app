@@ -79,10 +79,8 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-2">
+            <div className="col-3">
               <input type="submit" value="Search" className="btn btn-primary" />
-            </div>
-            <div className="col-1">
               <button
                 className="button location-btn gpsIconButton"
                 onClick={getCoords}
